@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Observação de Aves</string>
+    <string name="entrar">Entrar</string>
+    <string name="text_cadastro">Crie uma conta clicando aqui</string>
+    <string name="text_termo_Uso">Ao criar uma conta, você concorda com os nossos e reconhece as práticas de dados em
+                                    nossa Termos de Uso Política de Privacidade. </string>
+</resources>
