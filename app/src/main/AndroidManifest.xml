@@ -11,9 +11,10 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.ObservacaoDeAves">
-        <activity android:name=".FormCadastro"></activity>
-        <activity android:name=".FormLogin" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".TelaPerfil"></activity>
+        <activity android:name=".FormCadastro" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".FormLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
