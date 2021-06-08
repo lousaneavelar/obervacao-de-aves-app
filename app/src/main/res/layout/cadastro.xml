@@ -59,7 +59,7 @@
                     android:text=""/>
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnEntrar"
+                    android:id="@+id/btnCadastrar"
                     style="@style/Button"
                     android:layout_marginTop="480dp"
                     android:layout_marginBottom="60dp"

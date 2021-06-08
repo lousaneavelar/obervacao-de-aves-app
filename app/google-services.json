@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "235101096718",
+    "project_id": "observacao-de-aves",
+    "storage_bucket": "observacao-de-aves.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235101096718:android:4daf719d7e873af00ca55f",
+        "android_client_info": {
+          "package_name": "com.example.observacaodeaves"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235101096718-c2386ma0s09pq8t9l0ffcmt0rvurh692.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAemVbqcpMqkiuQU8elDjbgzexgS_CHnko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235101096718-c2386ma0s09pq8t9l0ffcmt0rvurh692.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
