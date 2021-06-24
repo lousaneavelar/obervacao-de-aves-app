@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.observacaodeaves">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera2" android:required="true"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -11,10 +18,16 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.ObservacaoDeAves">
-        <activity android:name=".TelaPerfil"></activity>
-        <activity android:name=".FormCadastro" />
+        <activity android:name=".MelhoresResultados"></activity>
+        <activity android:name=".AvesCatalogadasExpandida" />
+        <activity android:name=".AvesCatalogadas" />
+        <activity android:name=".CatalogarAves" />
+        <activity android:name=".RegistrarAves" />
+        <activity android:name=".FormLogin" />
+        <activity android:name=".TelaPerfil" />
+        <activity android:name=".TelaPrincipal" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".FormLogin">
+        <activity android:name=".FormCadastro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
