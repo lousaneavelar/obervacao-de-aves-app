@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtPesquisarAves"
@@ -22,6 +22,12 @@
             android:textStyle="bold"
             android:layout_marginTop="215dp"
             android:layout_marginLeft="80dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnIniciarNovaIdentificacao"
+            style="@style/Button"
+            android:layout_marginTop="200dp"
+            android:text="@string/identAves" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
