@@ -1,4 +1,4 @@
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,92 +6,105 @@
     android:background="@drawable/imgtelas"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        android:orientation="vertical">
+        android:fillViewport="true"
+        android:layout_above="@id/bottom_nav">
 
-        <TextView
-            android:id="@+id/txtCatalogarAves"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Catalogar Ave"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="150dp"/>
-
-        <EditText
-            android:id="@+id/edtNomePopularAve"
-            style="@style/Edit_Text2"
-            android:hint="Nome Popular"
-            android:layout_marginTop="10dp"
-            android:text="" />
-
-        <EditText
-            android:id="@+id/edtNomeCientificoAve"
-            style="@style/Edit_Text2"
-            android:hint="Nome Científico"
-            android:layout_marginTop="5dp"
-            android:text="" />
-
-        <EditText
-            android:id="@+id/edtCaracteristicasAdicionais"
-            style="@style/Edit_Text"
-            android:hint="Características Adicionais"
-            android:layout_marginTop="5dp"
-            android:text="" />
-
-        <EditText
-            android:id="@+id/edtLocalIdentificacao"
-            style="@style/Edit_Text2"
-            android:layout_marginTop="5dp"
-            android:hint="Local de Identificação"
-            android:text="" />
-
-        <EditText
-            android:id="@+id/edtDataIdentificacao"
-            style="@style/Edit_Text2"
-            android:layout_marginTop="5dp"
-            android:hint="Data de Identificação"
-            android:text="" />
-
-        <EditText
-            android:id="@+id/edtTamanhoAves"
-            style="@style/Edit_Text2"
-            android:layout_marginTop="5dp"
-            android:hint="Tamanho Da Espécime"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/txtPrincipaisCores"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Principais Cores da Ave"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"/>
-
-        <EditText
-            android:id="@+id/edtPrincipaisCores"
-            style="@style/Edit_Text2"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:hint="Cores"
-            android:inputType="textPersonName" />
+            android:layout_height="match_parent"
+            tools:context=".MainActivity"
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnCadastrarAves"
-            style="@style/Button"
-            android:layout_marginTop="50dp"
-            android:text="@string/cadastrarAves" />
+            <TextView
+                android:id="@+id/txtCatalogarAves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catalogar Ave"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"/>
 
+            <EditText
+                android:id="@+id/edtNomePopularAve"
+                style="@style/Edit_Text2"
+                android:hint="Nome Popular"
+                android:layout_marginTop="10dp"
+                android:text="" />
 
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+            <EditText
+                android:id="@+id/edtNomeCientificoAve"
+                style="@style/Edit_Text2"
+                android:hint="Nome Científico"
+                android:layout_marginTop="5dp"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/edtCaracteristicasAdicionais"
+                style="@style/Edit_Text"
+                android:hint="Características Adicionais"
+                android:layout_marginTop="5dp"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/edtLocalIdentificacao"
+                style="@style/Edit_Text2"
+                android:layout_marginTop="5dp"
+                android:hint="Local de Identificação"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/edtDataIdentificacao"
+                style="@style/Edit_Text2"
+                android:layout_marginTop="5dp"
+                android:hint="Data de Identificação"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/edtTamanhoAves"
+                style="@style/Edit_Text2"
+                android:layout_marginTop="5dp"
+                android:hint="Tamanho Da Espécime"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/txtPrincipaisCores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Principais Cores da Ave"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"/>
+
+            <EditText
+                android:id="@+id/edtPrincipaisCores"
+                style="@style/Edit_Text2"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Cores"
+                android:inputType="textPersonName" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCadastrarAves"
+                style="@style/Button"
+                android:layout_marginTop="50dp"
+                android:text="@string/cadastrarAves"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu_bottom"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"/>
+</RelativeLayout>

@@ -15,6 +15,7 @@ import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -36,6 +37,7 @@ public class CatalogarAves extends AppCompatActivity {
     private EditText edtTamanhoAves;
     private EditText edtPrincipaisCores;
     private Button btnCadastrarAves;
+    private BottomNavigationItemView bt_pesquisa, bt_principal, bt_perfil;
     String[] mensagens = {"Preencha todos os campos!"};
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -111,5 +113,39 @@ public class CatalogarAves extends AppCompatActivity {
         edtTamanhoAves = findViewById(R.id.edtTamanhoAves);
         edtPrincipaisCores = findViewById(R.id.edtPrincipaisCores);
         btnCadastrarAves = findViewById(R.id.btnCadastrarAves);
+        bt_perfil = findViewById(R.id.nav_perfil);
+        bt_pesquisa = findViewById(R.id.nav_search);
+        bt_principal = findViewById(R.id.nav_home);
+
+        iniciarBottomMenu();
+    }
+
+    private void iniciarBottomMenu(){
+        bt_perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CatalogarAves.this, TelaPerfil.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        bt_pesquisa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CatalogarAves.this, TelaPesquisa.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        bt_principal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CatalogarAves.this, AvesCatalogadas.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

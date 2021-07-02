@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -20,6 +21,7 @@ public class TelaPerfil extends AppCompatActivity {
 
     private TextView nomeUsuario, emailUsuario, foneUsuario;
     private Button btn_deslogar;
+    private BottomNavigationItemView bt_pesquisa, bt_principal, bt_perfil;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String usuarioID;
 
@@ -68,5 +70,39 @@ public class TelaPerfil extends AppCompatActivity {
         emailUsuario = findViewById(R.id.txtEmailUsuario);
         foneUsuario = findViewById(R.id.txtFoneUsuario);
         btn_deslogar = findViewById(R.id.btnDeslogar);
+        bt_perfil = findViewById(R.id.nav_perfil);
+        bt_pesquisa = findViewById(R.id.nav_search);
+        bt_principal = findViewById(R.id.nav_home);
+
+        iniciarBottomMenu();
+    }
+
+    private void iniciarBottomMenu(){
+        bt_perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaPerfil.this, TelaPerfil.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        bt_pesquisa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaPerfil.this, TelaPesquisa.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        bt_principal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaPerfil.this, AvesCatalogadas.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }
