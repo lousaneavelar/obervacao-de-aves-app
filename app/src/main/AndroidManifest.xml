@@ -23,17 +23,17 @@
         <activity android:name=".AvesCatalogadas" />
         <activity android:name=".CatalogarAves" />
         <activity android:name=".RegistrarAves" />
-        <activity android:name=".FormLogin" />
+        <activity android:name=".FormLogin"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".TelaPerfil" />
-        <activity android:name=".TelaPrincipal" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".FormCadastro">
+        <activity android:name=".TelaPesquisa">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FormCadastro"/>
     </application>
 
 </manifest>
