@@ -4,9 +4,19 @@
     <string name="identAves">Iniciar Identificação da Ave</string>
     <string name="cadastrarAves">Cadastrar Aves</string>
     <string name="identAve">Identificar Ave</string>
+    <string name="Aves">Ave</string>
 
     <string name="text_cadastro">Crie uma conta clicando aqui</string>
     <string name="text_termo_Uso">Ao criar uma conta, você concorda com os nossos e reconhece as práticas de dados em
                                     nossa Termos de Uso Política de Privacidade. </string>
+    <string name="title_activity_menu__bootom">menu_Bootom</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>

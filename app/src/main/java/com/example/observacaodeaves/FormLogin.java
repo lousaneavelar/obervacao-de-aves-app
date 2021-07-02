@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.util.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -76,7 +75,7 @@ public class FormLogin extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            TelaPerfil();
+                            TelaPesquisa();
 
                         }
                     }, 3000);
@@ -103,12 +102,12 @@ public class FormLogin extends AppCompatActivity {
         super.onStart();
         FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
         if(usuarioAtual != null){
-            TelaPerfil();
+            TelaPesquisa();
         }
     }
 
-    private  void TelaPerfil(){
-        Intent intent = new Intent(FormLogin.this, TelaPerfil.class);
+    private void TelaPesquisa(){
+        Intent intent = new Intent(FormLogin.this, TelaPesquisa.class);
         startActivity(intent);
         finish();
     }

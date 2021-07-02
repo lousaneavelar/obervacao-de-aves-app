@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <ImageView
+        android:id="@+id/imgAves"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/anubranco"
+        android:layout_margin="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="right">
+
+        <TextView
+            android:id="@+id/txtNomeEspeciesPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/Edit_Text3"
+            android:text="Nome Popular"/>
+
+        <TextView
+            android:id="@+id/txtNomeEspeciesCientifico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Edit_Text4"
+            android:textAppearance="@style/Edit_Text4"
+            android:text="Nome Cientifico"/>
+
+    </LinearLayout>
+
+</LinearLayout>
