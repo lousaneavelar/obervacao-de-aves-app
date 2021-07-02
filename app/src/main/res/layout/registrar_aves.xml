@@ -48,17 +48,6 @@
             android:layout_marginTop="5dp"
             android:text="" />
 
-        <TextView
-            android:id="@+id/txtPrincipaisCoress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quais eram suas principais cores?"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"/>
-
         //Colocar as opções de cores aqui.
 
         <androidx.appcompat.widget.AppCompatButton
