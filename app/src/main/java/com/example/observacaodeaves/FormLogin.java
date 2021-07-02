@@ -76,7 +76,7 @@ public class FormLogin extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            TelaPerfil();
+                            TelaPrincipal();
 
                         }
                     }, 3000);
@@ -103,12 +103,12 @@ public class FormLogin extends AppCompatActivity {
         super.onStart();
         FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
         if(usuarioAtual != null){
-            TelaPerfil();
+            TelaPrincipal();
         }
     }
 
-    private  void TelaPerfil(){
-        Intent intent = new Intent(FormLogin.this, TelaPerfil.class);
+    private void TelaPrincipal(){
+        Intent intent = new Intent(FormLogin.this, TelaPrincipal.class);
         startActivity(intent);
         finish();
     }

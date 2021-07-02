@@ -1,4 +1,5 @@
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,18 +17,37 @@
             android:id="@+id/txtPesquisarAves"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="100dp"
             android:text="Pesquisar Aves"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="215dp"
-            android:layout_marginLeft="80dp"/>
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtNomePopularAve2"
+            style="@style/Edit_Text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:baselineAligned="false"
+            android:hint="Digite o nome científico ou popular"
+            android:text="" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnIniciarNovaIdentificacao"
             style="@style/Button"
-            android:layout_marginTop="200dp"
+            android:layout_width="250dp"
+            android:layout_marginTop="60dp"
             android:text="@string/identAves" />
 
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu_botton"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"/>
+
+</RelativeLayout>

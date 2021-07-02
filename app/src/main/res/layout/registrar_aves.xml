@@ -1,4 +1,4 @@
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,18 +12,20 @@
         tools:context=".MainActivity"
         android:orientation="vertical">
 
+        //Colocar para identificar pelo maps
+
         <TextView
             android:id="@+id/txtInfoCaracteristicaAves"
-            android:layout_width="wrap_content"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
             android:text="Informe as características da Ave"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="80dp"/>
+            android:textStyle="bold" />
 
-        //Colocar para identificar pelo maps
         <EditText
             android:id="@+id/edtLocalObservacao"
             style="@style/Edit_Text2"
@@ -46,23 +48,19 @@
             android:layout_marginTop="5dp"
             android:text="" />
 
-        <TextView
-            android:id="@+id/txtPrincipaisCoress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quais eram suas principais cores?"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"/>
-
         //Colocar as opções de cores aqui.
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnIdentificarAve"
             style="@style/Button"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="120dp"
             android:text="@string/identAve" />
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu_botton"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"/>
+</RelativeLayout>

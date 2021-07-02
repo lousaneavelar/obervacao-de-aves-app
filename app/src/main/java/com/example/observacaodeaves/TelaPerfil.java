@@ -35,7 +35,7 @@ public class TelaPerfil extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                FirebaseAuth.getInstance().signOut();
+//                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(TelaPerfil.this, TelaPrincipal.class);
                 startActivity(intent);
                 finish();

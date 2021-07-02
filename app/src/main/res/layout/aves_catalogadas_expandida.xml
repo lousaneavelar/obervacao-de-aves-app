@@ -9,19 +9,44 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        android:orientation="horizontal">
+        android:background="@drawable/imgtelas"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/txtAvesCatalogadasExpandida"
-            android:layout_width="wrap_content"
+            android:id="@+id/nomeAveCatalogadaExpandida"
+            android:layout_width="215dp"
             android:layout_height="wrap_content"
-            android:text="Catálogos de Aves "
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="30dp"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nomeCientificoAveExpandida"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:baselineAligned="false" />
+
+        <ImageView
+            android:id="@+id/imagemAveCatalogadaExpandida"
+            android:layout_width="fill_parent"
+            android:layout_height="214dp"
+            android:layout_margin="10dip" />
+
+        <TextView
+            android:id="@+id/descricaoAveCatalogada"
+            android:layout_width="match_parent"
+            android:layout_height="369dp"
+            android:layout_gravity="end"
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="60dp"/>
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textColorHint="#000000"
+            android:textColorLink="#000000" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
