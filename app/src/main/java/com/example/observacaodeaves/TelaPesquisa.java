@@ -1,5 +1,6 @@
 package com.example.observacaodeaves;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +13,10 @@ import android.widget.EditText;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class TelaPesquisa extends AppCompatActivity {
     private EditText edit_pesquisa;
@@ -41,20 +45,25 @@ public class TelaPesquisa extends AppCompatActivity {
                     snackbar.show();
                 }else{
                     DocumentReference docRef = db.collection("aves").document(pesquisa);
-                    if(!docRef.getId().isEmpty()){
-                        Intent intent = new Intent(TelaPesquisa.this, MelhoresResultados.class);
-                        // Passar aves encontradas para melhores resultados.
-                        intent.putExtra("avesEncontradas", docRef.toString());
-                        startActivity(intent);
-                        finish();
-                    }
-                    Snackbar snackbar = Snackbar.make(v, "Nenhuma ave registrada com este nome!", Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
-                    Intent intent = new Intent(TelaPesquisa.this, CatalogarAves.class);
-                    startActivity(intent);
-                    finish();
+                    docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                        @Override
+                        public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                            if(value != null){
+                                Intent intent = new Intent(TelaPesquisa.this, MelhoresResultados.class);
+                                // Passar aves encontradas para melhores resultados.
+                                intent.putExtra("avesEncontradas", value.toString());
+                                startActivity(intent);
+                                finish();
+                            }
+                            Snackbar snackbar = Snackbar.make(v, "Nenhuma ave registrada com este nome!", Snackbar.LENGTH_SHORT);
+                            snackbar.setBackgroundTint(Color.WHITE);
+                            snackbar.setTextColor(Color.BLACK);
+                            snackbar.show();
+                            Intent intent = new Intent(TelaPesquisa.this, CatalogarAves.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
                 }
             }
         });
