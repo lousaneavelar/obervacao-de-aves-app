@@ -24,14 +24,14 @@
         android:theme="@style/Theme.ObservacaoDeAves">
         <activity android:name=".MelhoresResultados" />
         <activity android:name=".AvesCatalogadasExpandida" />
-        <activity android:name=".FormLogin" />
+        <activity android:name=".AvesCatalogadas" />
         <activity android:name=".CatalogarAves" />
         <activity android:name=".RegistrarAves" />
         <activity android:name=".FormCadastro" />
         <activity android:name=".TelaPerfil" />
         <activity android:name=".TelaPrincipal" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".AvesCatalogadas">
+        <activity android:name=".FormLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

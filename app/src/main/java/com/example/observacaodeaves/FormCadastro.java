@@ -98,6 +98,11 @@ public class FormCadastro extends AppCompatActivity {
                     CadastrarUsuario(v);
 
                 }
+
+                Intent intent = new Intent(FormCadastro.this, TelaPrincipal.class);
+                startActivity(intent);
+
+
             }
         });
 
