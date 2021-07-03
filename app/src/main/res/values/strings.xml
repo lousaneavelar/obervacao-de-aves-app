@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Observação de Aves</string>
     <string name="entrar">Entrar</string>
-    <string name="identAves">Iniciar Identificação da Aves</string>
+    <string name="identAves">Iniciar Identificação da Ave</string>
     <string name="cadastrarAves">Cadastrar Aves</string>
     <string name="identAve">Identificar Ave</string>
     <string name="Aves">Ave</string>

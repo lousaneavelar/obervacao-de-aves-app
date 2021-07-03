@@ -29,7 +29,7 @@
         <activity android:name=".RegistrarAves" />
         <activity android:name=".FormCadastro" />
         <activity android:name=".TelaPerfil" />
-        <activity android:name=".TelaPrincipal" />
+        <activity android:name=".TelaPesquisa" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FormLogin">
             <intent-filter>

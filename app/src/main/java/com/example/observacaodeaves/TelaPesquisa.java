@@ -1,5 +1,6 @@
 package com.example.observacaodeaves;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,10 +13,12 @@ import android.widget.EditText;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class TelaPrincipal extends AppCompatActivity {
-
+public class TelaPesquisa extends AppCompatActivity {
     private EditText edit_pesquisa;
     private Button bt_identificar;
     private BottomNavigationItemView bt_pesquisa, bt_principal, bt_perfil;
@@ -25,7 +28,7 @@ public class TelaPrincipal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tela_principal);
+        setContentView(R.layout.tela_pesquisa);
 
         getSupportActionBar().hide();
         IniciarComponentes();
@@ -42,20 +45,21 @@ public class TelaPrincipal extends AppCompatActivity {
                     snackbar.show();
                 }else{
                     DocumentReference docRef = db.collection("aves").document(pesquisa);
-                    if(!docRef.getId().isEmpty()){
-                        Intent intent = new Intent(TelaPrincipal.this, MelhoresResultados.class);
-                        // Passar aves encontradas para melhores resultados.
-                        intent.putExtra("avesEncontradas", docRef.toString());
-                        startActivity(intent);
-                        finish();
-                    }
-                    Snackbar snackbar = Snackbar.make(v, "Nenhuma ave registrada com este nome!", Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
-                    Intent intent = new Intent(TelaPrincipal.this, CatalogarAves.class);
-                    startActivity(intent);
-                    finish();
+                    docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                        @Override
+                        public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                            if(pesquisa.equals("anu")){
+                                Intent intent = new Intent(TelaPesquisa.this, MelhoresResultados.class);
+                                // Passar aves encontradas para melhores resultados.
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Intent intent = new Intent(TelaPesquisa.this, CatalogarAves.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                    });
                 }
             }
         });
@@ -75,7 +79,7 @@ public class TelaPrincipal extends AppCompatActivity {
         bt_perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TelaPrincipal.this, TelaPerfil.class);
+                Intent intent = new Intent(TelaPesquisa.this, TelaPerfil.class);
                 startActivity(intent);
                 finish();
             }
@@ -84,7 +88,7 @@ public class TelaPrincipal extends AppCompatActivity {
         bt_pesquisa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TelaPrincipal.this, TelaPrincipal.class);
+                Intent intent = new Intent(TelaPesquisa.this, TelaPesquisa.class);
                 startActivity(intent);
                 finish();
             }
@@ -93,7 +97,7 @@ public class TelaPrincipal extends AppCompatActivity {
         bt_principal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TelaPrincipal.this, AvesCatalogadas.class);
+                Intent intent = new Intent(TelaPesquisa.this, AvesCatalogadas.class);
                 startActivity(intent);
                 finish();
             }

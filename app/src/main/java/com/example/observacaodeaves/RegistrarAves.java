@@ -68,7 +68,7 @@ public class RegistrarAves extends AppCompatActivity {
         bt_pesquisa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegistrarAves.this, TelaPrincipal.class);
+                Intent intent = new Intent(RegistrarAves.this, TelaPesquisa.class);
                 startActivity(intent);
                 finish();
             }

@@ -99,7 +99,7 @@ public class FormCadastro extends AppCompatActivity {
 
                 }
 
-                Intent intent = new Intent(FormCadastro.this, TelaPrincipal.class);
+                Intent intent = new Intent(FormCadastro.this, TelaPesquisa.class);
                 startActivity(intent);
 
 
@@ -358,8 +358,8 @@ public class FormCadastro extends AppCompatActivity {
                 });
     }
 
-    private void TelaPrincipal(){
-        Intent intent = new Intent(FormCadastro.this, TelaPrincipal.class);
+    private void TelaPesquisa(){
+        Intent intent = new Intent(FormCadastro.this, TelaPesquisa.class);
         startActivity(intent);
         finish();
     }
