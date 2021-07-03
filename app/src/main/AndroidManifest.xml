@@ -29,9 +29,9 @@
         <activity android:name=".RegistrarAves" />
         <activity android:name=".FormCadastro" />
         <activity android:name=".TelaPerfil" />
-        <activity android:name=".TelaPesquisa" />
+        <activity android:name=".MelhoresResultados" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".MelhoresResultados">
+        <activity android:name=".TelaPesquisa">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

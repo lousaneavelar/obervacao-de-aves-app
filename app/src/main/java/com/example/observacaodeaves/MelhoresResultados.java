@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -28,23 +29,20 @@ public class MelhoresResultados extends AppCompatActivity {
 
         ArrayAdapter adapter = new Adaptador(this, adicionarEspecies());
         melhoresResultados.setAdapter(adapter);
+
+        melhoresResultados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MelhoresResultados.this, AvesCatalogadasExpandida.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private ArrayList<Especie> adicionarEspecies() {
         ArrayList<Especie> especies = new ArrayList<Especie>();
         Especie e = new Especie("Anu Branco", "Guira Guira", R.drawable.anubranco);
-        especies.add(e);
-        e = new Especie("Arara Canidé", "Ara ararauna", R.drawable.araracaninde);
-        especies.add(e);
-        e = new Especie("Rapazinho do Chaco", "Nystalus striatipectus", R.drawable.rapazinhodochaco);
-        especies.add(e);
-        e = new Especie("Tiriba fogo", "Pyrrhura devillei", R.drawable.tiribafoto);
-        especies.add(e);
-        e = new Especie("Tucanuçu", "Ramphastos toco", R.drawable.tucanucu);
-        especies.add(e);
-        e = new Especie("Príncipe", "Pyrocephalus", R.drawable.principe);
-        especies.add(e);
-        e = new Especie("Sanhaço", "Thraupis", R.drawable.sanhaco);
         especies.add(e);
 
         return especies;

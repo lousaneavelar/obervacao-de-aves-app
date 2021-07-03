@@ -48,20 +48,16 @@ public class TelaPesquisa extends AppCompatActivity {
                     docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
                         @Override
                         public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                            if(value != null){
+                            if(pesquisa.equals("anu")){
                                 Intent intent = new Intent(TelaPesquisa.this, MelhoresResultados.class);
                                 // Passar aves encontradas para melhores resultados.
-                                intent.putExtra("avesEncontradas", value.toString());
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Intent intent = new Intent(TelaPesquisa.this, CatalogarAves.class);
                                 startActivity(intent);
                                 finish();
                             }
-                            Snackbar snackbar = Snackbar.make(v, "Nenhuma ave registrada com este nome!", Snackbar.LENGTH_SHORT);
-                            snackbar.setBackgroundTint(Color.WHITE);
-                            snackbar.setTextColor(Color.BLACK);
-                            snackbar.show();
-                            Intent intent = new Intent(TelaPesquisa.this, CatalogarAves.class);
-                            startActivity(intent);
-                            finish();
                         }
                     });
                 }
